@@ -71,6 +71,9 @@ class MonthGridView @JvmOverloads constructor(
     private var dayOffset = 0
 
     init {
+        // Wajib clickable agar onTouchEvent menerima ACTION_DOWN (true)
+        // dan gestur tap sampai ke ACTION_UP tempat hari dideteksi.
+        isClickable = true
         computeOffset()
     }
 

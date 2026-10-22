@@ -33,6 +33,9 @@ class PaydaySettingActivity : AppCompatActivity() {
 
         val calculator = PaydayWidget()
 
+        // Ikon launcher dinamis mengikuti sisa hari
+        LauncherIconUpdater.update(this, calculator.calculateDaysToPayday(payday))
+
         // Mood emoji at the bottom-left, follows the currently selected payday
         fun updateMood() {
             txtMood.text = MoodEmoji.forDaysLeft(calculator.calculateDaysToPayday(picker.value))
@@ -51,9 +54,10 @@ class PaydaySettingActivity : AppCompatActivity() {
             updateMood()
         }
 
-        // MonthCalendarView -> NumberPicker
+        // MonthCalendarView -> NumberPicker (+ mood ikut ter-update)
         calendar.onDaySelected = { day ->
             if (picker.value != day) picker.value = day
+            updateMood()
         }
 
         updateMood()
