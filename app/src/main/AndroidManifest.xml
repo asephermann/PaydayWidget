@@ -43,7 +43,7 @@
             android:exported="true"
             android:icon="@mipmap/ic_launcher_day_0"
             android:roundIcon="@mipmap/ic_launcher_day_0"
-            android:targetActivity=".MainActivity">
+            android:targetActivity=".PaydaySettingActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -56,7 +56,7 @@
             android:exported="true"
             android:icon="@mipmap/ic_launcher_day_1"
             android:roundIcon="@mipmap/ic_launcher_day_1"
-            android:targetActivity=".MainActivity">
+            android:targetActivity=".PaydaySettingActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -69,7 +69,7 @@
             android:exported="true"
             android:icon="@mipmap/ic_launcher_day_2"
             android:roundIcon="@mipmap/ic_launcher_day_2"
-            android:targetActivity=".MainActivity">
+            android:targetActivity=".PaydaySettingActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -82,7 +82,7 @@
             android:exported="true"
             android:icon="@mipmap/ic_launcher_day_3"
             android:roundIcon="@mipmap/ic_launcher_day_3"
-            android:targetActivity=".MainActivity">
+            android:targetActivity=".PaydaySettingActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -95,7 +95,7 @@
             android:exported="true"
             android:icon="@mipmap/ic_launcher_day_4"
             android:roundIcon="@mipmap/ic_launcher_day_4"
-            android:targetActivity=".MainActivity">
+            android:targetActivity=".PaydaySettingActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -108,7 +108,7 @@
             android:exported="true"
             android:icon="@mipmap/ic_launcher_day_5"
             android:roundIcon="@mipmap/ic_launcher_day_5"
-            android:targetActivity=".MainActivity">
+            android:targetActivity=".PaydaySettingActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -121,7 +121,7 @@
             android:exported="true"
             android:icon="@mipmap/ic_launcher_day_6"
             android:roundIcon="@mipmap/ic_launcher_day_6"
-            android:targetActivity=".MainActivity">
+            android:targetActivity=".PaydaySettingActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -134,7 +134,7 @@
             android:exported="true"
             android:icon="@mipmap/ic_launcher_day_7"
             android:roundIcon="@mipmap/ic_launcher_day_7"
-            android:targetActivity=".MainActivity">
+            android:targetActivity=".PaydaySettingActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -147,7 +147,7 @@
             android:exported="true"
             android:icon="@mipmap/ic_launcher_day_8"
             android:roundIcon="@mipmap/ic_launcher_day_8"
-            android:targetActivity=".MainActivity">
+            android:targetActivity=".PaydaySettingActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -160,7 +160,7 @@
             android:exported="true"
             android:icon="@mipmap/ic_launcher_day_9"
             android:roundIcon="@mipmap/ic_launcher_day_9"
-            android:targetActivity=".MainActivity">
+            android:targetActivity=".PaydaySettingActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -173,7 +173,7 @@
             android:exported="true"
             android:icon="@mipmap/ic_launcher_day_10"
             android:roundIcon="@mipmap/ic_launcher_day_10"
-            android:targetActivity=".MainActivity">
+            android:targetActivity=".PaydaySettingActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -186,7 +186,7 @@
             android:exported="true"
             android:icon="@mipmap/ic_launcher_day_11"
             android:roundIcon="@mipmap/ic_launcher_day_11"
-            android:targetActivity=".MainActivity">
+            android:targetActivity=".PaydaySettingActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -199,7 +199,7 @@
             android:exported="true"
             android:icon="@mipmap/ic_launcher_day_12"
             android:roundIcon="@mipmap/ic_launcher_day_12"
-            android:targetActivity=".MainActivity">
+            android:targetActivity=".PaydaySettingActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -212,7 +212,7 @@
             android:exported="true"
             android:icon="@mipmap/ic_launcher_day_13"
             android:roundIcon="@mipmap/ic_launcher_day_13"
-            android:targetActivity=".MainActivity">
+            android:targetActivity=".PaydaySettingActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -225,7 +225,7 @@
             android:exported="true"
             android:icon="@mipmap/ic_launcher_day_14"
             android:roundIcon="@mipmap/ic_launcher_day_14"
-            android:targetActivity=".MainActivity">
+            android:targetActivity=".PaydaySettingActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -238,7 +238,7 @@
             android:exported="true"
             android:icon="@mipmap/ic_launcher_day_15"
             android:roundIcon="@mipmap/ic_launcher_day_15"
-            android:targetActivity=".MainActivity">
+            android:targetActivity=".PaydaySettingActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -251,7 +251,7 @@
             android:exported="true"
             android:icon="@mipmap/ic_launcher_day_16"
             android:roundIcon="@mipmap/ic_launcher_day_16"
-            android:targetActivity=".MainActivity">
+            android:targetActivity=".PaydaySettingActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -264,7 +264,7 @@
             android:exported="true"
             android:icon="@mipmap/ic_launcher_day_17"
             android:roundIcon="@mipmap/ic_launcher_day_17"
-            android:targetActivity=".MainActivity">
+            android:targetActivity=".PaydaySettingActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -277,7 +277,7 @@
             android:exported="true"
             android:icon="@mipmap/ic_launcher_day_18"
             android:roundIcon="@mipmap/ic_launcher_day_18"
-            android:targetActivity=".MainActivity">
+            android:targetActivity=".PaydaySettingActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -290,7 +290,7 @@
             android:exported="true"
             android:icon="@mipmap/ic_launcher_day_19"
             android:roundIcon="@mipmap/ic_launcher_day_19"
-            android:targetActivity=".MainActivity">
+            android:targetActivity=".PaydaySettingActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -303,7 +303,7 @@
             android:exported="true"
             android:icon="@mipmap/ic_launcher_day_20"
             android:roundIcon="@mipmap/ic_launcher_day_20"
-            android:targetActivity=".MainActivity">
+            android:targetActivity=".PaydaySettingActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -316,7 +316,7 @@
             android:exported="true"
             android:icon="@mipmap/ic_launcher_day_21"
             android:roundIcon="@mipmap/ic_launcher_day_21"
-            android:targetActivity=".MainActivity">
+            android:targetActivity=".PaydaySettingActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -329,7 +329,7 @@
             android:exported="true"
             android:icon="@mipmap/ic_launcher_day_22"
             android:roundIcon="@mipmap/ic_launcher_day_22"
-            android:targetActivity=".MainActivity">
+            android:targetActivity=".PaydaySettingActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -342,7 +342,7 @@
             android:exported="true"
             android:icon="@mipmap/ic_launcher_day_23"
             android:roundIcon="@mipmap/ic_launcher_day_23"
-            android:targetActivity=".MainActivity">
+            android:targetActivity=".PaydaySettingActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -355,7 +355,7 @@
             android:exported="true"
             android:icon="@mipmap/ic_launcher_day_24"
             android:roundIcon="@mipmap/ic_launcher_day_24"
-            android:targetActivity=".MainActivity">
+            android:targetActivity=".PaydaySettingActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -368,7 +368,7 @@
             android:exported="true"
             android:icon="@mipmap/ic_launcher_day_25"
             android:roundIcon="@mipmap/ic_launcher_day_25"
-            android:targetActivity=".MainActivity">
+            android:targetActivity=".PaydaySettingActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -381,7 +381,7 @@
             android:exported="true"
             android:icon="@mipmap/ic_launcher_day_26"
             android:roundIcon="@mipmap/ic_launcher_day_26"
-            android:targetActivity=".MainActivity">
+            android:targetActivity=".PaydaySettingActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -394,7 +394,7 @@
             android:exported="true"
             android:icon="@mipmap/ic_launcher_day_27"
             android:roundIcon="@mipmap/ic_launcher_day_27"
-            android:targetActivity=".MainActivity">
+            android:targetActivity=".PaydaySettingActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -407,7 +407,7 @@
             android:exported="true"
             android:icon="@mipmap/ic_launcher_day_28"
             android:roundIcon="@mipmap/ic_launcher_day_28"
-            android:targetActivity=".MainActivity">
+            android:targetActivity=".PaydaySettingActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -420,7 +420,7 @@
             android:exported="true"
             android:icon="@mipmap/ic_launcher_day_29"
             android:roundIcon="@mipmap/ic_launcher_day_29"
-            android:targetActivity=".MainActivity">
+            android:targetActivity=".PaydaySettingActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -433,7 +433,7 @@
             android:exported="true"
             android:icon="@mipmap/ic_launcher_day_30"
             android:roundIcon="@mipmap/ic_launcher_day_30"
-            android:targetActivity=".MainActivity">
+            android:targetActivity=".PaydaySettingActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

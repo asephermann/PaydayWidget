@@ -27,7 +27,8 @@ object LauncherIconUpdater {
         val targetClassName = "${context.packageName}.LauncherDay$day"
 
         val prefs = context.getSharedPreferences("payday_pref", Context.MODE_PRIVATE)
-        val current = prefs.getString(PREF_KEY, context.packageName + DEFAULT_ALIAS)
+        val current = prefs.getString(PREF_KEY, null)
+            ?: context.packageName + DEFAULT_ALIAS
         if (current == targetClassName) return
 
         val pm = context.packageManager
