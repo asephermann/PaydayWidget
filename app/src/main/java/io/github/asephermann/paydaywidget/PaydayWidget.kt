@@ -23,10 +23,13 @@ class PaydayWidget : AppWidgetProvider() {
     ) {
         val prefs = context.getSharedPreferences("payday_pref", Context.MODE_PRIVATE)
         val payday = prefs.getInt("payday", 25)
+        val daysLeft = calculateDaysToPayday(payday)
+
+        // Ikon launcher dinamis mengikuti sisa hari
+        LauncherIconUpdater.update(context, daysLeft)
 
         appWidgetIds.forEach { widgetId ->
             val views = RemoteViews(context.packageName, R.layout.payday_widget)
-            val daysLeft = calculateDaysToPayday(payday)
             val nextPaydayDate = calculateNextPaydayDate(payday)
             val dateFormatter = DateTimeFormatter.ofPattern("dd MMM yyyy")
 

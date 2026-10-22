@@ -12,5 +12,9 @@ class MainActivity : AppCompatActivity() {
             .edit {
                 putInt("payday", 25)
             }
+
+        // Ikon launcher dinamis mengikuti sisa hari
+        val payday = getSharedPreferences("payday_pref", MODE_PRIVATE).getInt("payday", 25)
+        LauncherIconUpdater.update(this, PaydayWidget().calculateDaysToPayday(payday))
     }
 }
