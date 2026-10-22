@@ -22,6 +22,7 @@ class PaydaySettingActivity : AppCompatActivity() {
         val prefs = getSharedPreferences("payday_pref", MODE_PRIVATE)
         val picker = findViewById<NumberPicker>(R.id.numberPicker)
         val calendar = findViewById<MonthCalendarView>(R.id.monthCalendar)
+        val txtMood = findViewById<TextView>(R.id.txtMood)
         val btnSave = findViewById<Button>(R.id.btnSave)
 
         picker.minValue = 1
@@ -29,6 +30,13 @@ class PaydaySettingActivity : AppCompatActivity() {
         val payday = prefs.getInt("payday", 25)
         picker.value = payday
         calendar.payday = payday
+
+        val calculator = PaydayWidget()
+
+        // Mood emoji at the bottom-left, follows the currently selected payday
+        fun updateMood() {
+            txtMood.text = MoodEmoji.forDaysLeft(calculator.calculateDaysToPayday(picker.value))
+        }
 
         // Set text size for NumberPicker based on screen width
         val displayMetrics = DisplayMetrics()
@@ -40,12 +48,15 @@ class PaydaySettingActivity : AppCompatActivity() {
         // NumberPicker -> MonthCalendarView
         picker.setOnValueChangedListener { _, _, newVal ->
             calendar.payday = newVal
+            updateMood()
         }
 
         // MonthCalendarView -> NumberPicker
         calendar.onDaySelected = { day ->
             if (picker.value != day) picker.value = day
         }
+
+        updateMood()
 
         btnSave.setOnClickListener {
             prefs.edit {

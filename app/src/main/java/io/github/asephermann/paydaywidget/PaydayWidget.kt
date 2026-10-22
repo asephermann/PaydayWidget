@@ -30,6 +30,9 @@ class PaydayWidget : AppWidgetProvider() {
             val nextPaydayDate = calculateNextPaydayDate(payday)
             val dateFormatter = DateTimeFormatter.ofPattern("dd MMM yyyy")
 
+            // Mood emoji at the bottom-left: the closer to payday, the happier
+            views.setTextViewText(R.id.txtMood, MoodEmoji.forDaysLeft(daysLeft))
+
             if (daysLeft == 0) {
                 // Payday day - hide progress and label, show celebration
                 views.setViewVisibility(R.id.progressCircle, View.GONE)
