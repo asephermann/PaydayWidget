@@ -5,6 +5,11 @@ import android.appwidget.AppWidgetManager
 import android.appwidget.AppWidgetProvider
 import android.content.Context
 import android.content.Intent
+import android.graphics.Bitmap
+import android.graphics.Canvas
+import android.graphics.Color
+import android.graphics.Paint
+import android.graphics.RectF
 import android.view.View
 import android.widget.RemoteViews
 import java.time.LocalDate
@@ -37,8 +42,9 @@ class PaydayWidget : AppWidgetProvider() {
             views.setTextViewText(R.id.txtMood, MoodEmoji.forDaysLeft(daysLeft))
 
             if (daysLeft == 0) {
-                // Payday day - hide progress and label, show celebration
-                views.setViewVisibility(R.id.progressCircle, View.GONE)
+                // Payday day - progress penuh (biru semua), label disembunyikan
+                views.setViewVisibility(R.id.progressCircle, View.VISIBLE)
+                views.setImageViewBitmap(R.id.progressCircle, createProgressBitmap(context, 30, 30))
                 views.setViewVisibility(R.id.txtLabel, View.GONE)
                 views.setViewVisibility(R.id.txtDays, View.VISIBLE)
                 views.setTextViewText(R.id.txtDays, "🎉")
@@ -53,18 +59,20 @@ class PaydayWidget : AppWidgetProvider() {
                 views.setViewVisibility(R.id.progressCircle, View.VISIBLE)
                 views.setViewVisibility(R.id.txtLabel, View.VISIBLE)
                 views.setViewVisibility(R.id.txtDays, View.VISIBLE)
-                views.setTextViewText(R.id.txtDays, "🎉")
+                views.setTextViewText(R.id.txtDays, "1")
+                views.setTextViewText(R.id.txtLabel, "day")
                 views.setTextViewText(R.id.txtPaydayInfo1, "Until your next")
                 views.setTextViewText(R.id.txtPaydayInfo2, "Payday")
                 views.setTextViewText(R.id.txtPaydayInfo3, "Tomorrow!")
                 views.setViewVisibility(R.id.txtPaydayInfo1, View.VISIBLE)
                 views.setViewVisibility(R.id.txtPaydayInfo2, View.VISIBLE)
                 views.setViewVisibility(R.id.txtPaydayInfo3, View.VISIBLE)
-                views.setProgressBar(R.id.progressCircle, 30, 29, false)
+                views.setImageViewBitmap(R.id.progressCircle, createProgressBitmap(context, 29, 30))
             } else {
                 // Normal days - show all elements
                 views.setViewVisibility(R.id.progressCircle, View.VISIBLE)
                 views.setViewVisibility(R.id.txtLabel, View.VISIBLE)
+                views.setTextViewText(R.id.txtLabel, "days")
                 views.setViewVisibility(R.id.txtDays, View.VISIBLE)
                 views.setTextViewText(R.id.txtDays, daysLeft.toString())
                 views.setTextViewText(R.id.txtPaydayInfo1, "Until your next")
@@ -73,7 +81,10 @@ class PaydayWidget : AppWidgetProvider() {
                 views.setViewVisibility(R.id.txtPaydayInfo1, View.VISIBLE)
                 views.setViewVisibility(R.id.txtPaydayInfo2, View.VISIBLE)
                 views.setViewVisibility(R.id.txtPaydayInfo3, View.VISIBLE)
-                views.setProgressBar(R.id.progressCircle, 30, 30 - daysLeft, false)
+                views.setImageViewBitmap(
+                    R.id.progressCircle,
+                    createProgressBitmap(context, 30 - daysLeft, 30)
+                )
             }
 
             val clickIntent = Intent(context, PaydaySettingActivity::class.java)
@@ -85,8 +96,8 @@ class PaydayWidget : AppWidgetProvider() {
                 PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
             )
 
-            views.setOnClickPendingIntent(R.id.txtDays, pendingIntent)
-            views.setOnClickPendingIntent(R.id.progressCircle, pendingIntent)
+            // Klik di area mana pun pada widget membuka aplikasi
+            views.setOnClickPendingIntent(R.id.widgetRoot, pendingIntent)
 
             appWidgetManager.updateAppWidget(widgetId, views)
         }
@@ -123,6 +134,39 @@ class PaydayWidget : AppWidgetProvider() {
                 ChronoUnit.DAYS.between(today, nextMonthPayday).toInt()
             }
         }
+    }
+
+    /**
+     * Menggambar ring progress ke Bitmap (untuk RemoteViews, karena shape "ring"
+     * XML tidak mendukung ujung arc membulat). Ujung arc biru dibulatkan
+     * lewat Paint.Cap.ROUND, dimulai dari jam 12 searah jarum jam.
+     */
+    private fun createProgressBitmap(context: Context, progress: Int, max: Int): Bitmap {
+        val density = context.resources.displayMetrics.density
+        val size = (140f * density).toInt()   // sama dengan FrameLayout 140dp
+        val stroke = 12f * density            // sama dengan thickness ring sebelumnya
+
+        val bitmap = Bitmap.createBitmap(size, size, Bitmap.Config.ARGB_8888)
+        val canvas = Canvas(bitmap)
+
+        val paint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
+            style = Paint.Style.STROKE
+            strokeWidth = stroke
+            strokeCap = Paint.Cap.ROUND
+        }
+
+        val inset = stroke / 2f + 1f
+        val rect = RectF(inset, inset, size - inset, size - inset)
+
+        // Track abu-abu penuh
+        paint.color = Color.parseColor("#E0E0E0")
+        canvas.drawOval(rect, paint)
+
+        // Arc biru sesuai progress
+        paint.color = Color.parseColor("#3F51B5")
+        canvas.drawArc(rect, -90f, 360f * progress / max, false, paint)
+
+        return bitmap
     }
 
     fun calculateNextPaydayDate(payday: Int): LocalDate {
