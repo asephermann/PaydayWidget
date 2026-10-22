@@ -33,6 +33,11 @@ android {
     }
 }
 
+// Nama APK otomatis: PaydayWidget-v1.1.1(3)-debug.apk / PaydayWidget-v1.1.1(3)-release.apk
+base {
+    archivesName = "PaydayWidget-v${android.defaultConfig.versionName}(${android.defaultConfig.versionCode})"
+}
+
 dependencies {
     implementation libs.androidx.core.ktx
     implementation libs.androidx.appcompat
