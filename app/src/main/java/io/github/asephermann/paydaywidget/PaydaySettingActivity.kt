@@ -21,18 +21,31 @@ class PaydaySettingActivity : AppCompatActivity() {
 
         val prefs = getSharedPreferences("payday_pref", MODE_PRIVATE)
         val picker = findViewById<NumberPicker>(R.id.numberPicker)
+        val calendar = findViewById<MonthCalendarView>(R.id.monthCalendar)
         val btnSave = findViewById<Button>(R.id.btnSave)
 
         picker.minValue = 1
         picker.maxValue = 31
-        picker.value = prefs.getInt("payday", 25)
+        val payday = prefs.getInt("payday", 25)
+        picker.value = payday
+        calendar.payday = payday
 
         // Set text size for NumberPicker based on screen width
         val displayMetrics = DisplayMetrics()
         windowManager.defaultDisplay.getMetrics(displayMetrics)
         val screenWidth = displayMetrics.widthPixels
-        val textSize = screenWidth / 10f // Adjust divider for desired size
+        val textSize = screenWidth / 20f // Adjust divider for desired size
         setNumberPickerTextSize(picker, textSize)
+
+        // NumberPicker -> MonthCalendarView
+        picker.setOnValueChangedListener { _, _, newVal ->
+            calendar.payday = newVal
+        }
+
+        // MonthCalendarView -> NumberPicker
+        calendar.onDaySelected = { day ->
+            if (picker.value != day) picker.value = day
+        }
 
         btnSave.setOnClickListener {
             prefs.edit {
