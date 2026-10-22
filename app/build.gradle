@@ -12,15 +12,17 @@ android {
         applicationId "io.github.asephermann.paydaywidget"
         minSdk 26
         targetSdk 36
-        versionCode 3
-        versionName "1.1.1"
+        versionCode 4
+        versionName "1.1.2"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
         release {
-            minifyEnabled false
+            // R8: shrink kode + resource untuk memperkecil ukuran APK
+            minifyEnabled true
+            shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
