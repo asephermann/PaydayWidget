@@ -21,21 +21,21 @@
         android:fillColor="#00000000"
         android:pathData="M45.3,47.8L47.6,45.5"
         android:strokeColor="#000000"
-        android:strokeWidth="4" />
+        android:strokeWidth="3.2" />
     <path
         android:fillColor="#00000000"
         android:pathData="M47.6,45.5L47.6,62.5"
         android:strokeColor="#000000"
-        android:strokeWidth="4.5" />
+        android:strokeWidth="3.2" />
     <!-- Angka "8" (dua lingkaran) -->
     <path
         android:fillColor="#00000000"
         android:pathData="M58,46.5A3,3 0 1 1 58,52.5A3,3 0 1 1 58,46.5"
         android:strokeColor="#000000"
-        android:strokeWidth="4" />
+        android:strokeWidth="3.2" />
     <path
         android:fillColor="#00000000"
         android:pathData="M58,54.5A3,3 0 1 1 58,60.5A3,3 0 1 1 58,54.5"
         android:strokeColor="#000000"
-        android:strokeWidth="4" />
+        android:strokeWidth="3.2" />
 </vector>
