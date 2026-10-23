@@ -11,14 +11,14 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_alignParentStart="true"
+        android:layout_marginStart="8dp"
         android:gravity="center"
         android:orientation="vertical">
 
         <!-- Ring progress 140dp (2x tinggi satu kolom widget, 1 kolom ~ 70dp) -->
         <FrameLayout
             android:layout_width="140dp"
-            android:layout_height="140dp"
-            android:layout_marginStart="16dp">
+            android:layout_height="140dp">
 
             <ImageView
                 android:id="@+id/progressCircle"
@@ -55,8 +55,9 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
         android:layout_toEndOf="@id/leftColumn"
-        android:layout_marginEnd="16dp"
         android:gravity="center"
         android:orientation="vertical">
 
