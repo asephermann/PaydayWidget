@@ -14,10 +14,11 @@
         android:gravity="center"
         android:orientation="vertical">
 
-        <!-- 2 kali tinggi satu kolom widget (1 kolom ~ 70dp) -->
+        <!-- Ring progress 140dp (2x tinggi satu kolom widget, 1 kolom ~ 70dp) -->
         <FrameLayout
             android:layout_width="140dp"
-            android:layout_height="140dp">
+            android:layout_height="140dp"
+            android:layout_marginStart="16dp">
 
             <ImageView
                 android:id="@+id/progressCircle"
@@ -35,7 +36,8 @@
                     android:id="@+id/txtDays"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="18"
+                    android:text="2"
+                    android:textColor="#212121"
                     android:textSize="45sp"
                     android:textStyle="bold" />
 
@@ -44,18 +46,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="days"
+                    android:textColor="#757575"
                     android:textSize="21sp" />
             </LinearLayout>
-
-            <TextView
-                android:id="@+id/txtMood"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="top|end"
-                android:gravity="center"
-                android:padding="3dp"
-                android:text="😐"
-                android:textSize="36sp" />
         </FrameLayout>
     </LinearLayout>
 
@@ -63,6 +56,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_toEndOf="@id/leftColumn"
+        android:layout_marginEnd="16dp"
         android:gravity="center"
         android:orientation="vertical">
 
@@ -73,6 +67,7 @@
             android:layout_marginStart="8dp"
             android:gravity="start"
             android:text="Until your next"
+            android:textColor="#757575"
             android:textSize="14sp" />
 
         <TextView
@@ -82,7 +77,8 @@
             android:layout_marginStart="8dp"
             android:gravity="start"
             android:text="Payday"
-            android:textSize="18sp"
+            android:textColor="#212121"
+            android:textSize="24sp"
             android:textStyle="bold" />
 
         <TextView
@@ -92,6 +88,7 @@
             android:layout_marginStart="8dp"
             android:gravity="start"
             android:text="25 Feb 2026"
+            android:textColor="#757575"
             android:textSize="14sp" />
     </LinearLayout>
 

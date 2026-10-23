@@ -38,8 +38,14 @@ class PaydayWidget : AppWidgetProvider() {
             val nextPaydayDate = calculateNextPaydayDate(payday)
             val dateFormatter = DateTimeFormatter.ofPattern("dd MMM yyyy")
 
-            // Mood emoji at the bottom-left: the closer to payday, the happier
-            views.setTextViewText(R.id.txtMood, MoodEmoji.forDaysLeft(daysLeft))
+            // Mood watermark mengikuti sisa hari: makin dekat payday makin ceria.
+            // Dipasang sebagai background resource di widgetRoot (bukan bitmap
+            // via Binder); background akan di-stretch penuh mengikuti widget.
+            views.setInt(
+                R.id.widgetRoot,
+                "setBackgroundResource",
+                MoodFace.forDaysLeft(daysLeft)
+            )
 
             if (daysLeft == 0) {
                 // Payday day - progress penuh (biru semua), label disembunyikan
@@ -142,7 +148,9 @@ class PaydayWidget : AppWidgetProvider() {
      * lewat Paint.Cap.ROUND, dimulai dari jam 12 searah jarum jam.
      */
     private fun createProgressBitmap(context: Context, progress: Int, max: Int): Bitmap {
-        val density = context.resources.displayMetrics.density
+        // Resolusi dibatasi 2x agar total bitmap RemoteViews tetap ringan
+        // (bitmap dikirim via Binder ke launcher, buffer transaksi ~1MB).
+        val density = minOf(context.resources.displayMetrics.density, 2f)
         val size = (140f * density).toInt()   // sama dengan FrameLayout 140dp
         val stroke = 12f * density            // sama dengan thickness ring sebelumnya
 
