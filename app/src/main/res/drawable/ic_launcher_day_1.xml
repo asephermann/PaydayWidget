@@ -20,12 +20,12 @@
     <!-- Digit segments (seven-segment digital, butt caps) -->
     <path
         android:fillColor="#00000000"
-        android:pathData="M54,47.2 L54,51.8"
+        android:pathData="M54,44.2 L54,51.8"
         android:strokeColor="#000000"
         android:strokeWidth="3.2" />
     <path
         android:fillColor="#00000000"
-        android:pathData="M54,56.2 L54,60.8"
+        android:pathData="M54,56.2 L54,63.8"
         android:strokeColor="#000000"
         android:strokeWidth="3.2" />
 </vector>
