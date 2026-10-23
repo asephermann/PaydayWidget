@@ -17,40 +17,35 @@
         android:strokeColor="#3F51B5"
         android:strokeLineCap="round"
         android:strokeWidth="7" />
+    <!-- Digit segments (seven-segment digital, butt caps) -->
     <path
         android:fillColor="#00000000"
-        android:pathData="M52.5,46.2 L52.5,52.8"
+        android:pathData="M45.15,47.2 L45.15,51.8"
         android:strokeColor="#000000"
-        android:strokeLineCap="round"
         android:strokeWidth="3.2" />
     <path
         android:fillColor="#00000000"
-        android:pathData="M52.5,55.2 L52.5,61.8"
+        android:pathData="M45.15,56.2 L45.15,60.8"
         android:strokeColor="#000000"
-        android:strokeLineCap="round"
         android:strokeWidth="3.2" />
     <path
         android:fillColor="#00000000"
-        android:pathData="M55.5,46.2 L55.5,52.8"
+        android:pathData="M52.85,47.2 L52.85,51.8"
         android:strokeColor="#000000"
-        android:strokeLineCap="round"
         android:strokeWidth="3.2" />
     <path
         android:fillColor="#00000000"
-        android:pathData="M56.7,54 L64.3,54"
+        android:pathData="M54.05,54 L61.65,54"
         android:strokeColor="#000000"
-        android:strokeLineCap="round"
         android:strokeWidth="3.2" />
     <path
         android:fillColor="#00000000"
-        android:pathData="M65.5,46.2 L65.5,52.8"
+        android:pathData="M62.85,47.2 L62.85,51.8"
         android:strokeColor="#000000"
-        android:strokeLineCap="round"
         android:strokeWidth="3.2" />
     <path
         android:fillColor="#00000000"
-        android:pathData="M65.5,55.2 L65.5,61.8"
+        android:pathData="M62.85,56.2 L62.85,60.8"
         android:strokeColor="#000000"
-        android:strokeLineCap="round"
         android:strokeWidth="3.2" />
 </vector>
