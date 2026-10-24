@@ -39,10 +39,11 @@ class PaydayWidget : AppWidgetProvider() {
             val dateFormatter = DateTimeFormatter.ofPattern("dd MMM yyyy")
 
             // Mood watermark mengikuti sisa hari: makin dekat payday makin ceria.
-            // Dipasang sebagai background resource di widgetRoot (bukan bitmap
-            // via Binder); background akan di-stretch penuh mengikuti widget.
+            // Dipasang sebagai background di imgMood (layer custom di atas
+            // widget_bg, di bawah konten); background akan di-stretch penuh
+            // mengikuti widget.
             views.setInt(
-                R.id.widgetRoot,
+                R.id.imgMood,
                 "setBackgroundResource",
                 MoodFace.forDaysLeft(daysLeft)
             )
